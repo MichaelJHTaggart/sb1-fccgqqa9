@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.hairdryer-body {
+  transform-origin: bottom right;
+}
+
+.blowing .hairdryer-body {
+  animation: shake 0.1s infinite alternate;
+}
+
+.blowing-effect {
+  position: absolute;
+  top: 4px;
+  right: -40px;
+  width: 30px;
+  height: 10px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 5px;
+  transform-origin: left center;
+  animation: wind 0.5s infinite;
+}
+
+.blowing .blowing-effect {
+  display: block;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes wind {
+  0% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1.5);
+  }
+}
